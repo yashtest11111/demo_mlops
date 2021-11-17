@@ -26,7 +26,7 @@ def parse_args():
     parser.add_argument(
         "--n_estimators",
         type=int,
-        default=500,
+        default=400,
         help="subs ample ratio of the training instances (default: 500)",
     )
     return parser.parse_args()
@@ -71,7 +71,7 @@ def main():
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
     # enable auto logging
-    # mlflow.xgboost.autolog()
+    mlflow.xgboost.autolog()
 
     ###################################################################
     ###### Xgboost Classification in Python #######
